@@ -65,12 +65,17 @@
 
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 
+	var _Content = __webpack_require__(405);
+
+	var _Content2 = _interopRequireDefault(_Content);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	_reactDom2.default.render(_react2.default.createElement(
 	  'div',
 	  null,
-	  _react2.default.createElement(_Navbar2.default, null)
+	  _react2.default.createElement(_Navbar2.default, null),
+	  _react2.default.createElement(_Content2.default, null)
 	), document.querySelector('.container'));
 
 /***/ },
@@ -19876,7 +19881,8 @@
 	    border: '1px solid grey',
 	    backgroundColor: '#ff5050',
 	    height: '70px',
-	    position: 'relative'
+	    position: 'relative',
+	    textAlign: 'center'
 	  },
 	  title: {
 	    color: 'white',
@@ -19884,8 +19890,8 @@
 	    fontFamily: 'Roboto',
 	    position: 'absolute',
 	    top: '50%',
-	    transform: 'translate(0,-50%)',
-	    paddingLeft: '20px'
+	    transform: 'translate(-50%,-50%)',
+	    display: 'inline-block'
 	  }
 	});
 
@@ -36767,6 +36773,70 @@
 	};
 
 	exports.default = new Typography();
+
+/***/ },
+/* 405 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _aphrodite = __webpack_require__(240);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Content = function (_Component) {
+	  _inherits(Content, _Component);
+
+	  function Content(props) {
+	    _classCallCheck(this, Content);
+
+	    var _this = _possibleConstructorReturn(this, (Content.__proto__ || Object.getPrototypeOf(Content)).call(this, props));
+
+	    _this.render = function () {
+
+	      var arrayImg = ['./img/LLAG-1.png', './img/LLAG-2.png', './img/LLAG-3.png', './img/LLAG-4.png', './img/LLAG-5.png'];
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: (0, _aphrodite.css)(styles.contentContainer) },
+	        arrayImg.map(function (currentVal, i) {
+	          return _react2.default.createElement('img', { key: i, src: currentVal });
+	        })
+	      );
+	    };
+
+	    return _this;
+	  }
+
+	  return Content;
+	}(_react.Component);
+
+	exports.default = Content;
+
+
+	var styles = _aphrodite.StyleSheet.create({
+	  content: {
+	    backgroundColor: 'red'
+	  },
+	  contentContainer: {
+	    textAlign: 'center'
+	  }
+
+	});
 
 /***/ }
 /******/ ]);

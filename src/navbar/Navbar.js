@@ -49,7 +49,8 @@ const styles = StyleSheet.create({
       border: '1px solid grey',
       backgroundColor: '#ff5050',
       height: '70px',
-      position: 'relative'
+      position: 'relative',
+      textAlign: 'center'
     },
     title: {
       color: 'white',
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
       fontFamily: 'Roboto',
       position: 'absolute',
       top: '50%',
-      transform: 'translate(0,-50%)',
-      paddingLeft: '20px'
+      transform: 'translate(-50%,-50%)',
+      display: 'inline-block'
     }
 });
