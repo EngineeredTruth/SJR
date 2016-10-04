@@ -7,6 +7,8 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import FlatButton from 'material-ui/FlatButton';
 import { StyleSheet, css } from 'aphrodite';
+import SJR from '../content/SJR.js'
+import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router'
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -18,11 +20,11 @@ export default class Navbar extends Component {
   render = () => {
     return(
       <div className={css(styles.navbar)}>
-        <h1 className={css(styles.title)}>Social Justice Retards</h1>
+        <Link to='/'><h1 className={css(styles.title)}>Social Justice Retards</h1></Link>
+        <Link to='/fatlogic'><h1 className={css(styles.title)}>Fat Logic</h1></Link>
       </div>
     )
   }
-
 }
 
 const styles = StyleSheet.create({
@@ -50,15 +52,16 @@ const styles = StyleSheet.create({
       backgroundColor: '#ff5050',
       height: '70px',
       position: 'relative',
-      textAlign: 'center'
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center'
     },
     title: {
       color: 'white',
       fontSize: 30,
       fontFamily: 'Roboto',
-      position: 'absolute',
-      top: '50%',
-      transform: 'translate(-50%,-50%)',
-      display: 'inline-block'
+      display: 'inline-block',
+      paddingLeft: '20px'
     }
 });

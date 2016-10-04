@@ -5,8 +5,6 @@ import Content from './content/Content.js'
 
 ReactDOM.render(
 <div>
-  <Navbar />
   <Content />
-  
 </div>
   , document.querySelector('.container'));

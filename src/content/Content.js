@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
+import SJR from '../content/SJR.js'
+import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router'
+import Fatlogic from '../content/Fatlogic.js'
+import Navbar from '../navbar/Navbar.js'
+import Notfound from '../content/Notfound.js'
 
 export default class Content extends Component {
   constructor(props){
@@ -8,30 +13,21 @@ export default class Content extends Component {
 
   render = () => {
 
-    var arrayImg = [
-      './img/LLAG-1.png',
-      './img/LLAG-2.png',
-      './img/LLAG-3.png',
-      './img/LLAG-4.png',
-      './img/LLAG-5.png',
-    ]
-
     return(
-      <div className={css(styles.contentContainer)}>
-        {arrayImg.map((currentVal, i) => {
-          return <img key={i} src={currentVal}/>
-        })}
+      <div>
+        <Router history={hashHistory}>
+          <Route path='/' component={Container} >
+            <IndexRoute component={SJR} />
+            <Route path='/fatlogic' component={Fatlogic} />
+            <Route path='*' component={Notfound} />
+          </Route>
+        </Router>
       </div>
     )
   }
 }
 
-const styles = StyleSheet.create({
-    content: {
-        backgroundColor: 'red'
-    },
-    contentContainer: {
-      textAlign: 'center'
-    },
-
-});
+const Container = (props) => (<div>
+  <Navbar />
+  {props.children}
+</div>)
