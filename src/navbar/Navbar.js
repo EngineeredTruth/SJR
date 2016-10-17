@@ -22,6 +22,7 @@ export default class Navbar extends Component {
       <div className={css(styles.navbar)}>
         <Link to='/'><h1 className={css(styles.title)}>Social Justice Retards</h1></Link>
         <Link to='/fatlogic'><h1 className={css(styles.title)}>Fat Logic</h1></Link>
+        <Link to='/sendcontent'><h1 className={css(styles.title)}>Send Content</h1></Link>
       </div>
     )
   }

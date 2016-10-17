@@ -5,6 +5,7 @@ import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 're
 import Fatlogic from '../content/Fatlogic.js'
 import Navbar from '../navbar/Navbar.js'
 import Notfound from '../content/Notfound.js'
+import SendContent from '../content/SendContent.js'
 
 export default class Content extends Component {
   constructor(props){
@@ -19,6 +20,7 @@ export default class Content extends Component {
           <Route path='/' component={Container} >
             <IndexRoute component={SJR} />
             <Route path='/fatlogic' component={Fatlogic} />
+            <Route path='/sendcontent' component={SendContent} />
             <Route path='*' component={Notfound} />
           </Route>
         </Router>
